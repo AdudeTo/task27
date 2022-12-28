@@ -8,11 +8,7 @@ let returnMessages = [];
 
 returnMessages["notRated"] = "not rated yet";
 returnMessages["noResults"] = "No results available";
-returnMessages["noРeviews"] = "There are no reviews for this movie yet";
-
-
-
-
+returnMessages["noReviews"] = "There are no reviews for this movie yet";
 
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
@@ -34,7 +30,7 @@ function printHTML(data) {
             movie.show.rating.average = movie.show.rating.average + " stars";
         }
         if (movie.show.summary == null) {
-            movie.show.summary = `<p><i>${returnMessages["noРeviews"]}</i></p>`;
+            movie.show.summary = `<p><i>${returnMessages["noReviews"]}</i></p>`;
         }
         
         item.innerHTML =
@@ -48,8 +44,7 @@ function printHTML(data) {
             ${movie.show.summary}
         `; 
         moviesListHolder.appendChild(item);      
-    });
-    
+    });    
 }
 
 function fetchmovieList(callback) {
