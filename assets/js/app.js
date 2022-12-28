@@ -71,6 +71,7 @@ function prepareAcall() {
             else
                 movieLastSearch = searchField.value;
                 printHTML(data);
+                window.scrollTo({top: 0, behavior: 'smooth'});
         });
         coolDownLoading = 1;
         setTimeout(() => { coolDownLoading = 0; prepareAcall(); }, coolDown);

@@ -1,4 +1,7 @@
 header {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
     h1{
         background: $headerBgColor;
         padding: calc(var(--gap)/3) var(--gap);
