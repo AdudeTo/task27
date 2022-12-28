@@ -5,6 +5,10 @@ body{
     font-family: $generalFont;
     font-size: var(--bodyFs);
 }
+input{
+    font-family: $generalFont;
+    font-size: var(--bodyFs);
+}
 ul,li{
     margin: 0;
     padding: 0;
