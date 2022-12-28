@@ -9,7 +9,7 @@ let returnMessages = [];
 returnMessages.notRated = "not rated yet";
 returnMessages.noResults = "No results available";
 returnMessages.noReviews = "There are no reviews for this movie yet";
-returnMessages.noMedia = "There are no reviews for this movie yet";
+returnMessages.noMedia = "https://vichev.art/task27/task27/noMedia.jpg";
 
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
