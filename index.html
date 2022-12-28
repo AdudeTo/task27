@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="assets/scss/main.css">
     <title>Task27</title>
 </head>
+
 <body>
-    
+    <header id="movies">
+        <h1>Show Search</h1>
+        <form>
+            <label for="search">Search:</label>
+            <input name="search" id="searchInput" />
+        </form>
+    </header>
+    <main>
+        <div class="no-results hidden" style="display: none;">
+            No results available
+        </div>
+        <section>
+            <ul class="movies">
+                <li>
+                    <figure class="obj_1-img">
+                        <img src="img.jpg" id="obj_1_img1">
+                    </figure>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur <strong>adipisicing elit</strong>. Modi repellat
+                        impedit, rem dolorum soluta amet repudiandae, voluptas maiores eum dignissimos distinctio sed.
+                        Similique rerum est quod quisquam, harum repellendus accusantium.
+                    </p>
+                </li>
+                <li>
+                    <figure class="obj_1-img">
+                        <img src="img.jpg" id="obj_1_img1">
+                    </figure>
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur <strong>adipisicing elit</strong>. Modi repellat
+                        impedit, rem dolorum soluta amet repudiandae, voluptas maiores eum dignissimos distinctio sed.
+                        Similique rerum est quod quisquam, harum repellendus accusantium.
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+    <script async="" src="assets/js/app.js"></script>
+
 </body>
+
 </html>

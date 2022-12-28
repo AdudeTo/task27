@@ -1,0 +1,14 @@
+header {
+    h1{
+        background: $headerBgColor;
+        padding: calc(var(--gap)/3) var(--gap);
+        font-size: var(--H1fs);
+        font-weight: 700;
+    }
+    form{
+        display: block;
+        text-align: right;
+        background: $searchLineBgColor;
+        padding: calc(var(--gap)/3) var(--gap);
+    }
+}
