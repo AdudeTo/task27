@@ -6,9 +6,9 @@ let movieSearchQuery, movieLastSearch, movieCallConstructor; coolDown = 500; coo
 let minCharacters = 3;
 let returnMessages = [];
 
-returnMessages["notRated"] = "not rated yet";
-returnMessages["noResults"] = "No results available";
-returnMessages["noReviews"] = "There are no reviews for this movie yet";
+returnMessages.notRated = "not rated yet";
+returnMessages.noResults = "No results available";
+returnMessages.noReviews = "There are no reviews for this movie yet";
 
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
@@ -18,19 +18,19 @@ function printHTML(data) {
         let item = document.createElement("LI");
         item.innerHTML =
         `
-            <h3>${returnMessages["noResults"]}</h3>
+            <h3>${returnMessages.noResults}</h3>
         `; 
         moviesListHolder.appendChild(item);
     }
     data.forEach(async (movie) => {
         let item = document.createElement("LI");
         if (movie.show.rating.average == null) {
-            movie.show.rating.average = returnMessages["notRated"];
+            movie.show.rating.average = returnMessages.notRated;
         } else {
             movie.show.rating.average = movie.show.rating.average + " stars";
         }
         if (movie.show.summary == null) {
-            movie.show.summary = `<p><i>${returnMessages["noReviews"]}</i></p>`;
+            movie.show.summary = `<p><i>${returnMessages.noReviews}</i></p>`;
         }
         
         item.innerHTML =
