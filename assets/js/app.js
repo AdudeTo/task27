@@ -6,7 +6,7 @@ let movieSearchQuery, movieLastSearch, movieCallConstructor; coolDown = 500; coo
 let minCharacters = 3;
 let returnMessages = [];
 
-returnMessages.notRated = "not rated yet";
+returnMessages.notRated = "Not rated yet";
 returnMessages.noResults = "No results available";
 returnMessages.noReviews = "There are no reviews for this movie yet";
 returnMessages.noMedia = "https://vichev.art/task27/task27/noMedia.jpg";
