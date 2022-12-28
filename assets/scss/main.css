@@ -44,7 +44,7 @@ header h1 {
   font-size: var(--H1fs);
   font-weight: 700;
 }
-header form {
+header div {
   display: block;
   text-align: right;
   background: #f5f5f7;
@@ -106,7 +106,7 @@ section li figure img {
   width: 100%;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 599px) {
   :root {
     --gap: 32px;
     --bodyFs: 18px;
