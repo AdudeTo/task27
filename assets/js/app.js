@@ -7,17 +7,28 @@ let minCharacters = 3;
 let returnMessages = [];
 
 returnMessages["notRated"] = "not rated yet";
+returnMessages["noResults"] = "No results available";
 
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
     let allItemsCont = data.length;
+    
+    if(!data.length){
+        let item = document.createElement("LI");
+        item.innerHTML =
+        `
+            <h3>${returnMessages["noResults"]}</h3>
+        `; 
+        moviesListHolder.appendChild(item);
+    }
     data.forEach(async (movie) => {
+        let item = document.createElement("LI");
         if (movie.show.rating.average == null) {
             movie.show.rating.average = returnMessages["notRated"];
         } else {
             movie.show.rating.average = movie.show.rating.average + " stars";
         }
-        let item = document.createElement("LI");
+        
         item.innerHTML =
         `
             <figure>
@@ -27,9 +38,10 @@ function printHTML(data) {
             <h4>Rating: <span>${movie.show.rating.average}</span></h4>
             <h5>${movie.show.genres.join(', ')}</h5>
             ${movie.show.summary}
-        `;
-        moviesListHolder.appendChild(item);
+        `; 
+        moviesListHolder.appendChild(item);      
     });
+    
 }
 
 function fetchmovieList(callback) {
