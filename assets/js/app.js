@@ -9,6 +9,7 @@ let returnMessages = [];
 returnMessages.notRated = "not rated yet";
 returnMessages.noResults = "No results available";
 returnMessages.noReviews = "There are no reviews for this movie yet";
+returnMessages.noMedia = "There are no reviews for this movie yet";
 
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
@@ -31,6 +32,9 @@ function printHTML(data) {
         }
         if (movie.show.summary == null) {
             movie.show.summary = `<p><i>${returnMessages.noReviews}</i></p>`;
+        }
+        if (movie.show.image.medium == null) {
+            movie.show.image.medium = returnMessages.noMedia;
         }
         
         item.innerHTML =
