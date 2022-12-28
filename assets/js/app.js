@@ -37,9 +37,11 @@ function printHTML(data) {
             movie.show.image.medium = returnMessages.noMedia;
         }
 
-        movie.show.name = movie.show.name.replaceAll(' Show', ' show');
-        movie.show.name = movie.show.name.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
-        movie.show.summary = movie.show.summary.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
+        movie.show.name = movie.show.name.replace(/Show/g, Function.prototype.call.bind(String.prototype.toLowerCase));
+        movie.show.name = movie.show.name.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toLowerCase));
+        movie.show.name = movie.show.name.replace(/robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
+        movie.show.summary = movie.show.summary.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toLowerCase));
+        movie.show.summary = movie.show.summary.replace(/robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
 
         
         item.innerHTML =
