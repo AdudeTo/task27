@@ -1,4 +1,96 @@
-:root{
-    --gap:48px;
-    --H1fs:64px;
+:root {
+    --borderColor: #eeeeee;
+    --gap: 26px;
+    --bodyFs: 18px;
+    --H1fs: 32px;
+    --H3fs: 28px;
+    --H4fs: 18px;
+    --H5fs: 16px;
+    --thumbW: 140px;
+    --thumbH: 196px;
+}
+section {
+    padding: calc(var(--gap) / 3) var(--gap);
+    li {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--borderColor);
+        padding-bottom: calc(var(--gap) / 3);
+        margin-bottom: calc(var(--gap) / 2);
+        h3,h4,h5{
+            width: 100%;
+        }
+        h3 {
+            font-size: var(--H3fs);
+            padding-bottom: calc(var(--gap) / 2);
+            order: -3;
+        }
+        h4 {
+            font-size: var(--H4fs);
+            padding-bottom: calc(var(--gap) / 4);
+            span {
+                font-weight: 400;
+            }
+            order: -2;
+        }
+        h5 {
+            font-size: var(--H5fs);
+            padding-bottom: calc(var(--gap) / 4);
+            font-weight: 400;
+            order: -1;
+        }
+        figure{
+            width: 100%;
+            height: auto;
+            float: unset;
+            padding-right: calc(var(--gap) / 3);
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mobile) {
+    :root {
+        --gap: 32px;
+        --bodyFs: 18px;
+        --H1fs: 36px;
+        --H3fs: 28px;
+        --H4fs: 18px;
+        --H5fs: 16px;
+        --thumbW: 140px;
+        --thumbH: 196px;
+    }
+    section {
+        display: block;       
+        li {
+            display: inline-block;
+            h3,h4,h5 {
+                order: unset;
+            }
+            figure {               
+                width: var(--thumbW);
+                height: var(--thumbH);
+                float: left;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    :root {
+        --gap: 48px;
+        --bodyFs: 24px;
+        --H1fs: 64px;
+        --H3fs: 32px;
+        --H4fs: 22px;
+        --H5fs: 18px;
+        --thumbW: 200px;
+        --thumbH: 280px;
+    }
 }
