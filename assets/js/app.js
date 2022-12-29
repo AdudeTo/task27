@@ -33,7 +33,7 @@ function printHTML(data) {
         if (movie.show.summary == null) {
             movie.show.summary = `<p><i>${returnMessages.noReviews}</i></p>`;
         }
-        if (movie.show.image.medium == null) {
+        if (!movie.show.image.medium) {
             movie.show.image.medium = returnMessages.noMedia;
         }
 
