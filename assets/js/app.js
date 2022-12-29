@@ -14,13 +14,13 @@ returnMessages.noMedia = "https://vichev.art/task27/task27/noMedia.jpg";
 function printHTML(data) {
     moviesListHolder.innerHTML = "";
     let allItemsCont = data.length;
-    
-    if(!data.length){
+
+    if (!data.length) {
         let item = document.createElement("LI");
         item.innerHTML =
-        `
+            `
             <h3>${returnMessages.noResults}</h3>
-        `; 
+        `;
         moviesListHolder.appendChild(item);
     }
     data.forEach(async (movie) => {
@@ -37,15 +37,15 @@ function printHTML(data) {
             movie.show.image.medium = returnMessages.noMedia;
         }
 
-        movie.show.name = movie.show.name.replace(/Show/g, Function.prototype.call.bind(String.prototype.toLowerCase)); 
+        movie.show.name = movie.show.name.replace(/Show/g, Function.prototype.call.bind(String.prototype.toLowerCase));
         movie.show.name = movie.show.name.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toLowerCase));
         movie.show.name = movie.show.name.replace(/robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
         movie.show.summary = movie.show.summary.replace(/Robot/g, Function.prototype.call.bind(String.prototype.toLowerCase));
         movie.show.summary = movie.show.summary.replace(/robot/g, Function.prototype.call.bind(String.prototype.toUpperCase));
 
-        
+
         item.innerHTML =
-        `
+            `
             <figure>
                 <img alt="${movie.show.name}" src="${movie.show.image.medium}">
             </figure>
@@ -53,9 +53,9 @@ function printHTML(data) {
             <h4>Rating: <span>${movie.show.rating.average}</span></h4>
             <h5>${movie.show.genres.join(', ')}</h5>
             ${movie.show.summary}
-        `; 
-        moviesListHolder.appendChild(item);      
-    });    
+        `;
+        moviesListHolder.appendChild(item);
+    });
 }
 
 function fetchmovieList(callback) {
@@ -77,8 +77,8 @@ function prepareAcall() {
                 console.log(error);
             else
                 movieLastSearch = searchField.value;
-                printHTML(data);
-                window.scrollTo({top: 0, behavior: 'smooth'});
+            printHTML(data);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         coolDownLoading = 1;
         setTimeout(() => { coolDownLoading = 0; prepareAcall(); }, coolDown);
