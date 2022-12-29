@@ -28,8 +28,6 @@ function printHTML(data) {
 
 
     data.forEach(async (movie) => {
-        console.log("data");
-        console.log(movie.show.image);
         let item = document.createElement("LI");        
         if (movie.show.rating.average == null) {
             movie.show.rating.average = returnMessages.notRated;
