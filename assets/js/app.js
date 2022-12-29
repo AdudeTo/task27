@@ -23,8 +23,14 @@ function printHTML(data) {
         `;
         moviesListHolder.appendChild(item);
     }
+
+    console.log(data);
+
+
     data.forEach(async (movie) => {
-        let item = document.createElement("LI");
+        console.log("data");
+        console.log(movie.show.image);
+        let item = document.createElement("LI");        
         if (movie.show.rating.average == null) {
             movie.show.rating.average = returnMessages.notRated;
         } else {
@@ -33,7 +39,8 @@ function printHTML(data) {
         if (movie.show.summary == null) {
             movie.show.summary = `<p><i>${returnMessages.noReviews}</i></p>`;
         }
-        if (!movie.show.image.medium) {
+        if (movie.show.image == null) {
+            movie.show.image = [];
             movie.show.image.medium = returnMessages.noMedia;
         }
 
