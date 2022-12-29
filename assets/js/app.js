@@ -24,9 +24,6 @@ function printHTML(data) {
         moviesListHolder.appendChild(item);
     }
 
-    console.log(data);
-
-
     data.forEach(async (movie) => {
         let item = document.createElement("LI");        
         if (movie.show.rating.average == null) {
